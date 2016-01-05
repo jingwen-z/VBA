@@ -76,3 +76,33 @@ Sub cross_worksheet_query()
     
     End With
 End Sub
+
+'Question 63 cross-worksheet data entry
+
+Sub cross_worksheet_data_entry()
+    Dim lastRow As Long
+    Dim lstData As ListObject
+    Dim rngTitle As Range
+    
+    'setting ListObject variable
+    Set lstData = Sheet3.ListObjects(1)
+    'focus on lstData
+    With lstData
+        'when Cell Area exists
+        If (Not .DataBodyRange Is Nothing) Then
+            lastRow = .DataBodyRange.Rows.Count
+        'otherwise
+        Else
+            .ListRows.Add
+            lastRow = 0
+        End If
+    End With
+    'for testing
+    Debug.Print lastRow
+    
+    'go through all titles in "data entry"
+    For Each rngTitle In Union(Sheet2.Range("A4:A10"), Sheet2.Range("C7:C10"))
+        'assinging the value of "data entry" to the relevant columns in "data sheet"
+        lstData.ListColumns(rngTitle.Value).DataBodyRange(lastRow).Offset(1, 0).Value = rngTitle.Offset(0, 1).Value
+    Next rngTitle
+End Sub
