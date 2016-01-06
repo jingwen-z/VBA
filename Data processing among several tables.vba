@@ -1,7 +1,7 @@
 'Chapiter 4 Data processing among several tables
 'Section 1 Data processing among different worksheets  
+
 'Question 61 How to generate specified quantity of worksheets according to the template  
-  
 Sub Generating_worksheets_according_to_the_template()  
     Dim rowN As Long  
     Dim shtOld As Worksheet  
@@ -31,7 +31,6 @@ End Sub
 
 
 'Question 62 cross-worksheet data query
-
 'variable's public declaration for storing the searching initial cell
 'public declaration is for all steps
 'In this case, if we enter "excel",we can get client whose name with "excel"; if not, we can only get the first client "Shijiazhuang..."
@@ -78,7 +77,6 @@ Sub cross_worksheet_query()
 End Sub
 
 'Question 63 cross-worksheet data entry
-
 Sub cross_worksheet_data_entry()
     Dim lastRow As Long
     Dim lstData As ListObject
@@ -105,4 +103,44 @@ Sub cross_worksheet_data_entry()
         'assinging the value of "data entry" to the relevant columns in "data sheet"
         lstData.ListColumns(rngTitle.Value).DataBodyRange(lastRow).Offset(1, 0).Value = rngTitle.Offset(0, 1).Value
     Next rngTitle
+End Sub
+
+'Question 64 creating batch of hyperlinks according to key words
+Sub creating_batch_of_hyperlinks()
+    Dim Sht1 As Worksheet   'balance sheet
+    Dim Sht2 As Worksheet   'report item description
+    Dim RngAll As Range     'ranges for hyperlink in balance sheet
+    Dim Rng1 As Range
+    Dim Rng2 As Range
+    
+    'setting worksheets
+    Set Sht1 = Sheet5
+    Set Sht2 = Sheet6
+    
+    'delete all hyperlinks
+    Sht1.Hyperlinks.Delete
+    Sht2.Hyperlinks.Delete
+    Sht2.Columns(2).Clear
+    
+    
+    'variable assignment
+    'range area where we need to create hyperlinks
+    Set RngAll = Union(Sht1.Range("A3:A13"), Sht1.Range("D3:D13"))
+    'go through all ranges
+    For Each Rng1 In RngAll
+        'when there is content in the cell
+        If Rng1 <> "" Then
+            'try to find the same content in the first column of "report item description"
+            Set Rng2 = Sht2.Range("A:A").Find(Rng1.Value, Lookat:=xlWhole)
+            'if we can find it, then create hyperlinks
+            If Not Rng2 Is Nothing Then
+                'creating hyperlink
+                Sht1.Hyperlinks.Add Rng1, "", Sht2.Name & Rng2.Address
+                Sht2.Hyperlinks.Add Rng2.Offset(0, 1), "", Sht1.Name & Rng1.Address, "", "return"
+                'setting format
+                Rng1.Font.Size = 9
+            End If
+        End If
+    Next
+
 End Sub
