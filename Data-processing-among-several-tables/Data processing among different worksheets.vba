@@ -8,9 +8,9 @@ Sub Generating_worksheets_according_to_the_template()
     Dim shtNew As Worksheet  
     Dim shtTemplate As Worksheet  
       
-    'setting template worksheet  
+    'set template worksheet  
     Set shtTemplate = Sheet2  
-    'setting data worksheet  
+    'set data worksheet  
     Set shtOld = Sheet1  
       
     'go through all data  
@@ -41,10 +41,10 @@ Sub cross_worksheet_query()
     Dim shtQuery As Worksheet
     Dim sKey As String
     Dim i As Long
-    'getting worksheet variable
+    'get worksheet variable
     Set shtQuery = Sheet1
     Set shtData = Sheet4
-    'searching key words
+    'search key words
     sKey = shtQuery.Cells(5, "B")
     
     With shtData
@@ -53,11 +53,11 @@ Sub cross_worksheet_query()
         If rngFind Is Nothing Then
             Set rngFind = .Range("A1")
         End If
-        'looking for the cells
+        'look for the cells
         Set rngFind = .Cells.Find(sKey, rngFind, lookat:=xlPart)
         'if we do not find it
         If rngFind Is Nothing Then
-            'deleting the data in query worksheet
+            'delete the data in query worksheet
             For i = 9 To 12
                 shtQuery.Cells(i, "B") = ""
             Next
@@ -68,7 +68,7 @@ Sub cross_worksheet_query()
             For i = 9 To 12
                 shtQuery.Cells(i, "B") = .Cells(rngFind.Row, i - 8)
             Next
-            'setting next initial cell as the end of the current cell
+            'set next initial cell as the end of the current cell
             Set rngFind = Intersect(rngFind.EntireRow, .Columns("D:D"))
     
         End If
@@ -82,7 +82,7 @@ Sub cross_worksheet_data_entry()
     Dim lstData As ListObject
     Dim rngTitle As Range
     
-    'setting ListObject variable
+    'set ListObject variable
     Set lstData = Sheet3.ListObjects(1)
     'focus on lstData
     With lstData
@@ -100,7 +100,7 @@ Sub cross_worksheet_data_entry()
     
     'go through all titles in "data entry"
     For Each rngTitle In Union(Sheet2.Range("A4:A10"), Sheet2.Range("C7:C10"))
-        'assinging the value of "data entry" to the relevant columns in "data sheet"
+        'assign the value of "data entry" to the relevant columns in "data sheet"
         lstData.ListColumns(rngTitle.Value).DataBodyRange(lastRow).Offset(1, 0).Value = rngTitle.Offset(0, 1).Value
     Next rngTitle
 End Sub
@@ -113,7 +113,7 @@ Sub creating_batch_of_hyperlinks()
     Dim Rng1 As Range
     Dim Rng2 As Range
     
-    'setting worksheets
+    'set worksheets
     Set Sht1 = Sheet5
     Set Sht2 = Sheet6
     
