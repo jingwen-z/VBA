@@ -38,3 +38,21 @@ Sub save_sheets_as_single_book()
     Next sht
     
 End Sub
+
+'Question 66 How to read data from other  workbook?
+Sub reading_data_across_workbook()
+    Dim wbkThis As Workbook   'the workbook at present
+    Dim wbkOpen As Workbook   'the workbook that we will open
+    
+    'set object Viewer
+    Set wbkThis = ThisWorkbook
+    'set the workbook that we should open
+    Set wbkOpen = Workbooks.Open(wbkThis.Path & "\database.xlsx")
+    'copy the first worksheet's content of opened workbook into the workbook at present
+    wbkOpen.Worksheets(1).Cells.Copy wbkThis.Worksheets(1).Range("A1")
+    'close the opened worksheet and save nothing
+    wbkOpen.Close False
+    
+    'name the worksheet in ThisWorkbook
+    wbkThis.Worksheets(1).Name = "read data across workbook"
+End Sub
