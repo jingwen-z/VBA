@@ -56,3 +56,64 @@ Sub reading_data_across_workbook()
     'name the worksheet in ThisWorkbook
     wbkThis.Worksheets(1).Name = "read data across workbook"
 End Sub
+
+'Question 67 How to import worksheets from different workbooks?
+Sub batch_importing_worksheets()
+    Dim fileName As String        'name of file
+    Dim filePath As String        'path of file
+    Dim wbkThis As Workbook       'the workbook at present
+    Dim wbkOpen As Workbook       'workbook to be opened
+    Dim shtNew As Worksheet       'new data worksheet
+    Dim shtData As Worksheet      'original data worksheet
+    
+    'stop screenupdating
+    Application.ScreenUpdating = False
+    
+    'set the workbook at present
+    Set wbkThis = ThisWorkbook
+    
+    'stop alert display
+    Application.DisplayAlerts = False
+    
+        'delete all the worksheets except for Sheet1 in the workbook at present
+        For Each shtNew In wbkThis.Worksheets
+            If shtNew.Name <> Sheet1.Name Then
+                shtNew.Delete
+            End If
+        Next
+    
+    'start alert display
+    Application.DisplayAlerts = True
+    
+    'get the path of file at present
+    filePath = wbkThis.Path
+    'look for .xlsx workbooks
+    fileName = Dir(filePath & "\*.xlsx")
+    'check fileName
+    'Debug.Print fileName
+    
+    'loop if the result is not empty
+    Do While fileName <> ""
+        
+        'open workbook
+        Set wbkOpen = Workbooks.Open(filePath & "\" & fileName)
+        'set original data worksheet
+        Set shtData = wbkOpen.Worksheets(1)
+        'insert worksheet into the workbook at present
+        Set shtNew = wbkThis.Worksheets.Add(after:=wbkThis.Worksheets(wbkThis.Worksheets.Count))
+        'change the name of worksheet, and rename it with the name of workbook
+        shtNew.Name = Left(fileName, 4)
+        'copy original data into new worksheet
+        shtData.Cells.Copy shtNew.Range("A1")
+        
+        'close the workbook
+        wbkOpen.Close False
+        'continu to find the next workbook
+        fileName = Dir
+        
+    Loop
+    
+    'start screenupdating
+    Application.ScreenUpdating = True
+    
+End Sub
