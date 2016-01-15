@@ -116,4 +116,11 @@ Sub batch_importing_worksheets()
     'start screenupdating
     Application.ScreenUpdating = True
     
+    'stop alert display
+    Application.DisplayAlerts = False
+    'delete Sheet1
+    Worksheets(1).Delete
+    'start alert display
+    Application.DisplayAlerts = True
+    
 End Sub
