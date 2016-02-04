@@ -124,3 +124,17 @@ Sub batch_importing_worksheets()
     Application.DisplayAlerts = True
     
 End Sub
+
+'Question 68 backup the current workbook to the intended file
+Sub backup_workbook()
+    Dim FilePathName As String
+    Dim FileName As String
+
+    FilePathName = ThisWorkbook.Path & "\backup"
+    Debug.Print FilePathName
+    Debug.Print ThisWorkbook.Path
+    
+    FileName = FilePathName & Format(Now, "yymmddhhmmss") & ".xlsx"
+
+    ThisWorkbook.SaveCopyAs FileName
+End Sub
