@@ -134,7 +134,7 @@ Sub backup_workbook()
     Debug.Print FilePathName
     Debug.Print ThisWorkbook.Path
     
-    FileName = FilePathName & Format(Now, "yymmddhhmmss") & ".xlsx"
+    FileName = FilePathName & Format(Now, "yymmddhhmmss") & ".xlsm"
 
     ThisWorkbook.SaveCopyAs FileName
 End Sub
