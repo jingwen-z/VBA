@@ -4,11 +4,22 @@
 'First, I will find the max "Close" among all data
 Sub max_close_overall()
     
-    Dim allclose As Range
+    Dim RowN As Long
+    Dim LastRow As Range
+    Dim AllClose As Range
     
-    Set allclose = Feuil1.Range("E2:E466")  'HOW TO IMPROVE THIS???
+    If Cells(Rows.Count, "E").Value = "" Then
+        Set LastRow = Cells(Rows.Count, "E").End(xlUp)
+    Else
+        Set LastRow = Cells(Rows.Count, "E")
+    End If
     
-    overallmax = Application.WorksheetFunction.Max(allclose)
+    RowN = LastRow.Row
+    Debug.Print RowN
+    
+    Set AllClose = Feuil1.Range(Cells(2, "E"), Cells(RowN, "E"))
+    
+    overallmax = Application.WorksheetFunction.Max(AllClose)
     
     MsgBox prompt:="The overall max ""Close"" value is " & overallmax & ".", _
             Buttons:=vbOKOnly
