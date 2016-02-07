@@ -7,6 +7,7 @@ Sub max_close_overall()
     Dim RowN As Long
     Dim LastRow As Range
     Dim AllClose As Range
+    Dim MaxClose As Range
     
     If Cells(Rows.Count, "E").Value = "" Then
         Set LastRow = Cells(Rows.Count, "E").End(xlUp)
@@ -20,8 +21,15 @@ Sub max_close_overall()
     Set AllClose = Feuil1.Range(Cells(2, "E"), Cells(RowN, "E"))
     
     overallmax = Application.WorksheetFunction.Max(AllClose)
+
+    Set MaxClose = AllClose.Find(overallmax, Range("E2"), xlValues, xlWhole)
+    Debug.Print MaxClose.Row
     
-    MsgBox prompt:="The overall max ""Close"" value is " & overallmax & ".", _
+    maxclosedate = Cells(MaxClose.Row, "A").Text
+    Debug.Print maxclosedate
+ 
+    
+    MsgBox prompt:="The overall max ""Close"" value is " & overallmax & " which is on " & maxclosedate & ".", _
             Buttons:=vbOKOnly
             
 End Sub
