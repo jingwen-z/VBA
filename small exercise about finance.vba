@@ -30,8 +30,13 @@ Sub max_close_overall()
     maxclosedate = Cells(MaxClose.Row, "A").Text
     Debug.Print maxclosedate
     '2015/12/29
-    
+
+    Range(Cells(MaxClose.Row, "A"), Cells(MaxClose.Row, "G")).Interior.Color = RGB(255, 255, 0)
+
     MsgBox prompt:="The overall max ""Close"" value is " & overallmax & " which is on " & maxclosedate & ".", _
             Buttons:=vbOKOnly
+            
+    'Cells.Interior.ColorIndex = 0
+    'clean the interior color after closing the msgbox
             
 End Sub
