@@ -21,13 +21,15 @@ Sub max_close_overall()
     Set AllClose = Feuil1.Range(Cells(2, "E"), Cells(RowN, "E"))
     
     overallmax = Application.WorksheetFunction.Max(AllClose)
-
+    '776.599976
+    
     Set MaxClose = AllClose.Find(overallmax, Range("E2"), xlValues, xlWhole)
     Debug.Print MaxClose.Row
+    '23
     
     maxclosedate = Cells(MaxClose.Row, "A").Text
     Debug.Print maxclosedate
- 
+    '2015/12/29
     
     MsgBox prompt:="The overall max ""Close"" value is " & overallmax & " which is on " & maxclosedate & ".", _
             Buttons:=vbOKOnly
