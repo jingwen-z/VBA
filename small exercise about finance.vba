@@ -37,6 +37,6 @@ Sub max_close_overall()
             Buttons:=vbOKOnly
             
     'Cells.Interior.ColorIndex = 0
-    'clean the interior color after closing the msgbox
+    'clean the interior color immediately after closing the msgbox
             
 End Sub
