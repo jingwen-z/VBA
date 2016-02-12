@@ -40,3 +40,18 @@ Sub max_close_overall()
     'clean the interior color immediately after closing the msgbox
             
 End Sub
+
+'Then, I will try to find out the max "Close" value for each year
+Sub max_close_eachyr()
+
+
+    'clean the interior color
+    Cells.Interior.ColorIndex = 0
+
+    'find out the data in between 2014/3/20 and 2014/12/31
+    Range("A1").AutoFilter Field:=1, Criteria2:=Array(0, "12/31/2014"), Operator:=xlFilterValues
+
+'AFTER FILTERING ALL DATA OF YEAR 2014, HOW TO GET THE ROWNUMBER OF THE FIRST ROW???
+
+
+End Sub
