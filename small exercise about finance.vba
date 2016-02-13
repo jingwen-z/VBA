@@ -42,16 +42,33 @@ Sub max_close_overall()
 End Sub
 
 'Then, I will try to find out the max "Close" value for each year
-Sub max_close_eachyr()
+Sub max_close_14()
 
+    Dim RowN14 As Long
 
     'clean the interior color
     Cells.Interior.ColorIndex = 0
 
-    'find out the data in between 2014/3/20 and 2014/12/31
     Range("A1").AutoFilter Field:=1, Criteria2:=Array(0, "12/31/2014"), Operator:=xlFilterValues
+    
+    RowN14 = Range("A1").CurrentRegion.Rows.Count
+    'Debug.Print RowN14
+    '466
+    
+    maxClose14 = Cells(RowN14, "E").Value
+    'Debug.Print maxClose14
+    '596.082692
+    
+    maxClose14date = Cells(RowN14, "A").Text
+    'Debug.Print maxClose14date
+    '2014/9/19
+    
+    Range(Cells(RowN14, "A"), Cells(RowN14, "G")).Interior.Color = RGB(255, 255, 0)
+    
+    MsgBox prompt:="In 2014, the max value of ""Close"" is " & maxClose14 & " which is on " & maxClose14date & ".", _
+            Buttons:=vbOKOnly
 
-'AFTER FILTERING ALL DATA OF YEAR 2014, HOW TO GET THE ROWNUMBER OF THE FIRST ROW???
-
-
+    Selection.AutoFilter
+    
 End Sub
+
