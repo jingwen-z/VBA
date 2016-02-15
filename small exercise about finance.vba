@@ -108,3 +108,40 @@ Sub max_close_15()
     Selection.AutoFilter
     
 End Sub
+
+Sub max_close_16()
+
+    Dim RowN16 As Long
+    Dim LastRow16 As Range
+
+    'clean the interior color
+    Cells.Interior.ColorIndex = 0
+
+    Range("A1").AutoFilter Field:=1, Criteria2:=Array(0, "1/29/2016"), Operator:=xlFilterValues
+    
+    If Cells(Rows.Count, "E").Value = "" Then
+        Set LastRow16 = Cells(Rows.Count, "E").End(xlUp)
+    Else
+        Set LastRow16 = Cells(Rows.Count, "E")
+    End If
+    
+    RowN16 = LastRow16.Row
+    'Debug.Print RowN16
+    '20
+    
+    maxClose16 = Cells(RowN16, "E").Value
+    'Debug.Print maxClose16
+    '741.840027
+    
+    maxClose16date = Cells(RowN16, "A").Text
+    'Debug.Print maxClose16date
+    '2016/1/4
+    
+    Range(Cells(RowN16, "A"), Cells(RowN16, "G")).Interior.Color = RGB(255, 255, 0)
+    
+    MsgBox prompt:="In 2016, the max value of ""Close"" is " & maxClose16 & " which is on " & maxClose16date & ".", _
+            Buttons:=vbOKOnly
+
+    Selection.AutoFilter
+    
+End Sub
