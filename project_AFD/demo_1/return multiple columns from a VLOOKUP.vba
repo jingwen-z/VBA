@@ -1,14 +1,12 @@
 Sub display_result_in_a_new_wkb()
 '
 ' return multiple columns from a VLOOKUP in a new workbook
-'
-    Dim wbkT1 As Workbook
+'   
     Dim wbkOpenT2 As Workbook
     Dim wbkRslt As Workbook
     
-    Set wbkT1 = ThisWorkbook
     ' open workbook "Arrête Comptable"
-    Set wbkOpenT2 = Workbooks.Open(wbkT1.Path & "\test2.xlsx")
+    Set wbkOpenT2 = Workbooks.Open("P:\BDDs\après ETL\copie\test2.xlsx")
     
     ' create a new workbook for reading result
     Set wbkRslt = Workbooks.Add
