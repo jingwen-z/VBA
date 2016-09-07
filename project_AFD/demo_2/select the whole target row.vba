@@ -2,7 +2,7 @@ Sub select_the_whole_row_of_target_nconcours()
 
     Dim wbkT1 As Workbook
     Dim wbkOpenT2 As Workbook
-    Dim nR As Integer
+    Dim nR As Long
     
     Set wbkT1 = ThisWorkbook
     
