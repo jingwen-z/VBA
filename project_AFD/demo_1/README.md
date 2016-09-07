@@ -1,6 +1,8 @@
 The result for one N° concours is shown in a new workbook, so the processus is as following:
 
-- open a new worksheet
+- open the worksheet where the table_array is
+
+- create a new worksheet
 
 - copy the fields' names of the worksheet where the table_array is
 
