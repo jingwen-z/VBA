@@ -5,7 +5,7 @@ Sub display_result_in_a_new_wkb()
     Dim wbkOpenT2 As Workbook
     Dim wbkRslt As Workbook
     
-    ' open workbook "Arrête Comptable"
+    ' open workbook "test2"
     Set wbkOpenT2 = Workbooks.Open("P:\BDDs\après ETL\copie\test2.xlsx")
     
     ' create a new workbook for reading result
