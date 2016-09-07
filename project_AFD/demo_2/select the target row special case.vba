@@ -2,7 +2,7 @@ Sub select_the_target_row_special_case()
 
     Dim wbkT1 As Workbook
     Dim wbkOpenT2 As Workbook
-    Dim nR As Integer
+    Dim nR As Long
     Dim bridge As String ' value of two lookup_value
     
     Set wbkT1 = ThisWorkbook
