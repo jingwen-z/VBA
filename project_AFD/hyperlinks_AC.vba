@@ -22,8 +22,9 @@ Sub hyperlinks_AC()
     ' get the last row's number in worksheet "shtPrin"
     RowN = shtPrin.Cells(Rows.Count, 13).End(xlUp).Row
     
-    ' remove all hyperlinks
-    shtPrin.Hyperlinks.Delete
+    ' remove all hyperlinks of column 55
+    shtPrin.Columns(55).Hyperlinks.Delete
+
 
     ' go through all N concours in test1
     For nR = 2 To RowN
