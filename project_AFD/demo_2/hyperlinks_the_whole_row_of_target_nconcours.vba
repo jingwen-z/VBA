@@ -47,7 +47,7 @@ Sub hyperlinks_the_whole_row_of_target_nconcours()
                 ' create a hyperlink in the same row as
                 ' the corresponding N concours for shtT2D2
                 shtT1D2.Hyperlinks.Add Anchor:=Cells(nR, 6), _
-                Address:="P:\BDDs\après ETL\copie\test2.xlsx", _
+                Address:=wbkOpenT2.Path & "\test2.xlsx", _
                 SubAddress:="t2_d2!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
