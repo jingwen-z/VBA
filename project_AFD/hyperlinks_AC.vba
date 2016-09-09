@@ -25,8 +25,7 @@ Sub hyperlinks_AC()
     ' remove all hyperlinks of column 55
     shtPrin.Columns(55).Hyperlinks.Delete
 
-
-    ' go through all N concours in test1
+    ' go through all N concours in Table_Principale
     For nR = 2 To RowN
         ' locate the row of target N concours
         mR = Application.Match(shtPrin.Cells(nR, 13).Value, shtAC.Columns(13), 0)
@@ -51,5 +50,7 @@ Sub hyperlinks_AC()
                 TextToDisplay:="cliquez ici"
             End If
     Next nR
+    
+    wbkOpenAC.Close False
 
 End Sub
