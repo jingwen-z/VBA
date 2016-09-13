@@ -13,7 +13,7 @@ Sub hyperlinks_Banques()
     
     ' open workbook "Banques_copie"
     ' the address is variable
-    Set wbkOpenBq = Workbooks.Open("P:\BDDs\après ETL\copie\Banques_copie.xlsx")
+    Set wbkOpenBq = Workbooks.Open("P:\BDDs\après ETL\copie\Banques_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -45,7 +45,7 @@ Sub hyperlinks_Banques()
                 ' the corresponding N concours for shtBq
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 58), _
-                Address:=wbkOpenBq.Path & "\Banques_copie.xlsx", _
+                Address:=wbkOpenBq.Path & "\Banques_copie.xlsm", _
                 SubAddress:="Banques!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
