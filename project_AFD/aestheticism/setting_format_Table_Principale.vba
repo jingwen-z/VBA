@@ -261,10 +261,11 @@ Sub setting_format_Table_Principale()
     Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
 
     ' setting format
-    Columns("C:C").NumberFormat = "m/d/yyyy"  ' correct after data are corrected
+    Columns("C:C").NumberFormat = "m/d/yyyy"
     Columns("AB:AI").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("AJ:AJ").NumberFormat = "0%"
-    Columns("AO:AO").NumberFormat = "m/d/yyyy"  ' correct after data are corrected
+    Columns("AO:AO").NumberFormat = "m/d/yyyy"
+    Columns("AQ:AQ").NumberFormat = "m/d/yyyy"
     Columns("AR:AR").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
     Selection.AutoFilter
