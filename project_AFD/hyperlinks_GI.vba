@@ -13,7 +13,7 @@ Sub hyperlinks_GI()
     
     ' open workbook "GI_copie"
     ' the address is variable
-    Set wbkOpenGI = Workbooks.Open("P:\BDDs\après ETL\copie\GI_copie.xlsx")
+    Set wbkOpenGI = Workbooks.Open("P:\BDDs\après ETL\copie\GI_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -46,7 +46,7 @@ Sub hyperlinks_GI()
                 ' the corresponding N concours for shtGI
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 56), _
-                Address:=wbkOpenGI.Path & "\GI_copie.xlsx", _
+                Address:=wbkOpenGI.Path & "\GI_copie.xlsm", _
                 SubAddress:="GI!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
