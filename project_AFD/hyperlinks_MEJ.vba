@@ -14,7 +14,7 @@ Sub hyperlinks_MEJ()
     
     ' open workbook "MEJ_copie"
     ' the address is variable
-    Set wbkOpenMEJ = Workbooks.Open("P:\BDDs\après ETL\copie\MEJ_copie.xlsx")
+    Set wbkOpenMEJ = Workbooks.Open("P:\BDDs\après ETL\copie\MEJ_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -50,7 +50,7 @@ Sub hyperlinks_MEJ()
                 ' the corresponding N concours for shtMEJ
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 59), _
-                Address:=wbkOpenMEJ.Path & "\MEJ_copie.xlsx", _
+                Address:=wbkOpenMEJ.Path & "\MEJ_copie.xlsm", _
                 SubAddress:="MEJ!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
