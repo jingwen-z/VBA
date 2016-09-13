@@ -13,7 +13,7 @@ Sub hyperlinks_AC()
     
     ' open workbook "Arrêté_Comptable_copie"
     ' the address is variable
-    Set wbkOpenAC = Workbooks.Open("P:\BDDs\après ETL\copie\Arrêté_Comptable_copie.xlsx")
+    Set wbkOpenAC = Workbooks.Open("P:\BDDs\après ETL\copie\Arrêté_Comptable_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -45,7 +45,7 @@ Sub hyperlinks_AC()
                 ' the corresponding N concours for shtAC
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 55), _
-                Address:=wbkOpenAC.Path & "\Arrêté_Comptable_copie.xlsx", _
+                Address:=wbkOpenAC.Path & "\Arrêté_Comptable_copie.xlsm", _
                 SubAddress:="Arrêté_Comptable!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
