@@ -13,7 +13,7 @@ Sub hyperlinks_GPP()
     
     ' open workbook "GPP_copie"
     ' the address is variable
-    Set wbkOpenGPP = Workbooks.Open("P:\BDDs\après ETL\copie\GPP_copie.xlsx")
+    Set wbkOpenGPP = Workbooks.Open("P:\BDDs\après ETL\copie\GPP_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -45,7 +45,7 @@ Sub hyperlinks_GPP()
                 ' the corresponding N concours for shtGPP
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 57), _
-                Address:=wbkOpenGPP.Path & "\GPP_copie.xlsx", _
+                Address:=wbkOpenGPP.Path & "\GPP_copie.xlsm", _
                 SubAddress:="GPP!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
