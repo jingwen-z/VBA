@@ -293,6 +293,7 @@ Sub setting_format_AC()
     Columns("C:C").NumberFormat = "m/d/yyyy"
     Columns("AB:AI").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("AJ:AJ").NumberFormat = "0%"
+    Columns("AK:AK").NumberFormat = "0.00"
     Columns("AM:AX").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("BB:BB").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("BE:BE").NumberFormat = "m/d/yyyy"
