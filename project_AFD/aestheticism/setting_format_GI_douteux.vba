@@ -219,6 +219,7 @@ Sub setting_format_GI_douteux()
     Columns("C:C").NumberFormat = "m/d/yyyy"
     Columns("N:U").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("V:V").NumberFormat = "0%"
+    Columns("W:W").NumberFormat = "0.00"
     Columns("X:X").NumberFormat = "0%"
     Columns("AC:AD").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
