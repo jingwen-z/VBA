@@ -55,41 +55,41 @@ Sub setting_format_MEJ()
     Columns("F:F").ColumnWidth = 11
     Columns("G:G").ColumnWidth = 51
     Columns("H:H").EntireColumn.AutoFit
-    Columns("I:I").EntireColumn.AutoFit
+    Columns("I:I").ColumnWidth = 16.57
     Columns("J:J").EntireColumn.AutoFit
     Columns("K:K").EntireColumn.AutoFit
     Columns("L:L").ColumnWidth = 42
-    Columns("M:M").EntireColumn.AutoFit
+    Columns("M:M").ColumnWidth = 16.57
     Columns("N:N").EntireColumn.AutoFit
     Columns("O:O").ColumnWidth = 7.57
-    Columns("P:P").ColumnWidth = 21.86
+    Columns("P:P").ColumnWidth = 24.14
     Columns("Q:Q").ColumnWidth = 21.86
-    Columns("R:R").ColumnWidth = 21.71
+    Columns("R:R").ColumnWidth = 23.57
     Columns("S:S").ColumnWidth = 21.71
     Columns("T:T").ColumnWidth = 10.71
     Columns("U:U").ColumnWidth = 10.71
     Columns("V:V").ColumnWidth = 16.29
     Columns("W:W").ColumnWidth = 18
-    Columns("X:X").ColumnWidth = 20.71
+    Columns("X:X").ColumnWidth = 22.71
     Columns("Y:Y").ColumnWidth = 30.57
     Columns("Z:Z").ColumnWidth = 13
-    Columns("AA:AA").ColumnWidth = 21.71
+    Columns("AA:AA").ColumnWidth = 23.29
     Columns("AB:AB").ColumnWidth = 32.71
     Columns("AC:AC").ColumnWidth = 20.43
-    Columns("AD:AD").ColumnWidth = 17
+    Columns("AD:AD").ColumnWidth = 18.14
     Columns("AE:AE").ColumnWidth = 28.86
-    Columns("AF:AF").ColumnWidth = 10.14
-    Columns("AG:AG").ColumnWidth = 14.14
-    Columns("AH:AH").EntireColumn.AutoFit
-    Columns("AI:AI").ColumnWidth = 12.29
-    Columns("AJ:AJ").EntireColumn.AutoFit
+    Columns("AF:AF").ColumnWidth = 21.71
+    Columns("AG:AG").ColumnWidth = 17.43
+    Columns("AH:AH").ColumnWidth = 21.14
+    Columns("AI:AI").ColumnWidth = 14.43
+    Columns("AJ:AJ").ColumnWidth = 30
     Columns("AK:AK").ColumnWidth = 15
-    Columns("AL:AL").EntireColumn.AutoFit
-    Columns("AM:AM").EntireColumn.AutoFit
+    Columns("AL:AL").ColumnWidth = 27
+    Columns("AM:AM").ColumnWidth = 15.71
     Columns("AN:AN").ColumnWidth = 27.29
-    Columns("AO:AO").ColumnWidth = 34.43
-    Columns("AP:AP").EntireColumn.AutoFit
-    Columns("AQ:AQ").EntireColumn.AutoFit
+    Columns("AO:AO").ColumnWidth = 38.86
+    Columns("AP:AP").ColumnWidth = 37.57
+    Columns("AQ:AQ").ColumnWidth = 34
     Columns("AR:AR").EntireColumn.AutoFit
     Columns("AS:AS").EntireColumn.AutoFit
     Columns("AT:AT").ColumnWidth = 43.86
@@ -101,31 +101,31 @@ Sub setting_format_MEJ()
     Columns("AZ:AZ").ColumnWidth = 29.71
     Columns("BA:BA").ColumnWidth = 17.71
     Columns("BB:BB").EntireColumn.AutoFit
-    Columns("BC:BC").EntireColumn.AutoFit
+    Columns("BC:BC").ColumnWidth = 13.14
     Columns("BD:BD").ColumnWidth = 29
     Columns("BE:BE").ColumnWidth = 13.43
-    Columns("BF:BF").EntireColumn.AutoFit
-    Columns("BG:BG").EntireColumn.AutoFit
-    Columns("BH:BH").EntireColumn.AutoFit
-    Columns("BI:BI").EntireColumn.AutoFit
-    Columns("BJ:BJ").EntireColumn.AutoFit
-    Columns("BK:BK").EntireColumn.AutoFit
+    Columns("BF:BF").ColumnWidth = 16.57
+    Columns("BG:BG").ColumnWidth = 19.29
+    Columns("BH:BH").ColumnWidth = 15.57
+    Columns("BI:BI").ColumnWidth = 19.29
+    Columns("BJ:BJ").ColumnWidth = 21.71
+    Columns("BK:BK").ColumnWidth = 12.43
     Columns("BL:BL").EntireColumn.AutoFit
-    Columns("BM:BM").EntireColumn.AutoFit
-    Columns("BN:BN").EntireColumn.AutoFit
+    Columns("BM:BM").ColumnWidth = 26.86
+    Columns("BN:BN").ColumnWidth = 16.57
     Columns("BO:BO").ColumnWidth = 44.43
-    Columns("BP:BP").EntireColumn.AutoFit
+    Columns("BP:BP").ColumnWidth = 15.86
     Columns("BQ:BQ").ColumnWidth = 12
-    Columns("BR:BR").EntireColumn.AutoFit
+    Columns("BR:BR").ColumnWidth = 15
     Columns("BS:BS").EntireColumn.AutoFit
     Columns("BT:BT").EntireColumn.AutoFit
-    Columns("BU:BU").EntireColumn.AutoFit
-    Columns("BV:BV").EntireColumn.AutoFit
+    Columns("BU:BU").ColumnWidth = 20.86
+    Columns("BV:BV").ColumnWidth = 17.29
     Columns("BW:BW").ColumnWidth = 15.31
-Columns("BX:BX").EntireColumn.AutoFit
-Columns("BY:BY").ColumnWidth = 50.71
-Columns("BZ:BZ").EntireColumn.AutoFit
-Columns("CA:CA").ColumnWidth = 62.57
+    Columns("BX:BX").EntireColumn.AutoFit
+    Columns("BY:BY").ColumnWidth = 50.71
+    Columns("BZ:BZ").ColumnWidth = 17.86
+    Columns("CA:CA").ColumnWidth = 62.57
 
     ' setting color of headers
     Range("A1:C1").Select
