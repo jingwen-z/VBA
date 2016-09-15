@@ -336,7 +336,7 @@ Sub setting_format_MEJ()
     Columns("B:B").NumberFormat = "m/d/yyyy"
     Columns("P:S").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("T:T").NumberFormat = "0%"
-    Columns("U:U").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
+    Columns("U:U").NumberFormat = "0.00"
     Columns("W:W").NumberFormat = "m/d/yyyy"
     Columns("AO:AS").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("AU:AW").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
