@@ -28,6 +28,22 @@ Sub setting_format_MEJ()
         .MergeCells = False
         .Font.Bold = True
     End With
+    
+    ' rename some fields
+    Range("AA1").FormulaR1C1 = "Evènement générateur-Date décheance du terme"
+    Range("AB1").FormulaR1C1 = _
+        "Evènement générateur-Date de l'info du fait générateur par la banque à l'AFD"
+    Range("AC1").FormulaR1C1 = "Evènement générateur-Délai respecté"
+    Range("AO1").FormulaR1C1 = _
+        "Détermination Indemnisation-Perte provisoire calculée par la banque en devise"
+    Range("AP1").FormulaR1C1 = _
+        "Détermination Indemnisation-Perte provisoire accordée par l'AFD en devise"
+    Range("AQ1").FormulaR1C1 = _
+        "Détermination Indemnisation-Perte provisoire accordée par l'AFD en €"
+    Range("AR1").FormulaR1C1 = _
+        "Détermination Indemnisation-Différence sur l'assiette de garantie de la MEJ"
+    Range("AS1").FormulaR1C1 = "Détermination Indemnisation-Evaluation des sûretés"
+    Range("AT1").FormulaR1C1 = "Détermination Indemnisation-Commentaire"
 
     ' setting width of columns
     Rows("1:1").RowHeight = 36.75
@@ -57,9 +73,9 @@ Sub setting_format_MEJ()
     Columns("X:X").ColumnWidth = 20.71
     Columns("Y:Y").ColumnWidth = 30.57
     Columns("Z:Z").ColumnWidth = 13
-    Columns("AA:AA").ColumnWidth = 17.14
-    Columns("AB:AB").ColumnWidth = 29
-    Columns("AC:AC").ColumnWidth = 9.14
+    Columns("AA:AA").ColumnWidth = 21.71
+    Columns("AB:AB").ColumnWidth = 32.71
+    Columns("AC:AC").ColumnWidth = 20.43
     Columns("AD:AD").ColumnWidth = 17
     Columns("AE:AE").ColumnWidth = 28.86
     Columns("AF:AF").ColumnWidth = 10.14
@@ -71,7 +87,7 @@ Sub setting_format_MEJ()
     Columns("AL:AL").EntireColumn.AutoFit
     Columns("AM:AM").EntireColumn.AutoFit
     Columns("AN:AN").ColumnWidth = 27.29
-    Columns("AO:AO").EntireColumn.AutoFit
+    Columns("AO:AO").ColumnWidth = 34.43
     Columns("AP:AP").EntireColumn.AutoFit
     Columns("AQ:AQ").EntireColumn.AutoFit
     Columns("AR:AR").EntireColumn.AutoFit
@@ -220,7 +236,7 @@ Columns("CA:CA").ColumnWidth = 62.57
         .PatternTintAndShade = 0
     End With
 
-    Range("BR2:BX2").Select
+    Range("BU1:CA1").Select
     With Selection.Interior
         .Pattern = xlSolid
         .PatternColorIndex = xlAutomatic
