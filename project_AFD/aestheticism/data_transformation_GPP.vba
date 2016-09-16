@@ -1,9 +1,10 @@
 Sub data_transformation_GPP()
 
     Workbooks.Open Filename:= _
-        "S:\EBC\GAR\3 - MIDDLE OFFICE\2015\Suivi encours GPP\Au 31-12-2015\1- ARIZ suiviReporting Global 31 12 2015.xlsm" _
+        "blablabla..." _
         , UpdateLinks:=0
     Range("A1:FS3").Copy
+    ' "blablabla..." is the full path of workbook
     
     Windows("GPP_copie.xlsm").Activate
     Rows("1:1").Select
@@ -12,6 +13,8 @@ Sub data_transformation_GPP()
     Application.CutCopyMode = False
     Selection.Delete Shift:=xlUp
 
-    'wbkOpenAC.Close False
+    'close the first opened workbook
+    Windows("blabla.xxx").Close False
+    ' "blabla.xxx" is the name of workbook
 
 End Sub
