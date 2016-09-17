@@ -23,8 +23,8 @@ Sub hyperlinks_MEJ()
     ' get the last row's number in worksheet "shtPrin"
     RowN = shtPrin.Cells(Rows.Count, 13).End(xlUp).Row
     
-    ' remove all hyperlinks of column 59
-    shtPrin.Columns(59).Hyperlinks.Delete
+    ' remove all hyperlinks of column 60
+    shtPrin.Columns(60).Hyperlinks.Delete
 
     ' go through all N concours in Table_Principale
     For nR = 2 To RowN
@@ -40,7 +40,7 @@ Sub hyperlinks_MEJ()
             If IsError(mR) Then
                 ' write nothing in the cell
                 ' the column number is variable
-                shtPrin.Cells(nR, 59).Value = ""
+                shtPrin.Cells(nR, 60).Value = ""
             Else
                 ' the cells that should be chose
                 slctRng = "A" & mR & ":CA" & mR
@@ -49,7 +49,7 @@ Sub hyperlinks_MEJ()
                 ' create a hyperlink in the same row as
                 ' the corresponding N concours for shtMEJ
                 ' the column number is variable
-                shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 59), _
+                shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 60), _
                 Address:=wbkOpenMEJ.Path & "\MEJ_copie.xlsm", _
                 SubAddress:="MEJ!" & slctRng, _
                 TextToDisplay:="cliquez ici"
