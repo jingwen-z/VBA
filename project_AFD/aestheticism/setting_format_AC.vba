@@ -88,6 +88,7 @@ Sub setting_format_AC()
     Columns("BG:BG").ColumnWidth = 17.43
     Columns("BH:BH").EntireColumn.AutoFit
     Columns("BI:BI").ColumnWidth = 67
+    Columns("BJ:BJ").ColumnWidth = 56
 
     ' setting color of headers
     Range("A1:E1").Select
