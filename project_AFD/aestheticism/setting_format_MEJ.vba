@@ -345,7 +345,15 @@ Sub setting_format_MEJ()
     Columns("BL:BN").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("BS:BT").NumberFormat = "m/d/yyyy"
     Columns("BU:BU").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-
+    
+    ' autofilter
     Selection.AutoFilter
+    
+    ' freeze panes
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
     
 End Sub
