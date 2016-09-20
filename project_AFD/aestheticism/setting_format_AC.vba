@@ -195,7 +195,15 @@ Sub setting_format_AC()
         .TintAndShade = 0.399975585192419
         .PatternTintAndShade = 0
     End With
+        
+    Range("BJ1").Select
+    With Selection.Interior
+        .Pattern = xlNone
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
     
+    ' setting color of fond
     Range("AU1:BB1").Select
     With Selection.Font
         .Color = -16776961
@@ -300,14 +308,15 @@ Sub setting_format_AC()
     Columns("BG:BG").NumberFormat = "m/d/yyyy"
     Columns("BH:BH").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
+    ' autofilter
     Selection.AutoFilter
     
+    ' hiding several fields
     Columns("G:H").Select
     Selection.EntireColumn.Hidden = True
     Columns("J:K").Select
     Selection.EntireColumn.Hidden = True
     Columns("BA:BA").Select
     Selection.EntireColumn.Hidden = True
-
     
 End Sub
