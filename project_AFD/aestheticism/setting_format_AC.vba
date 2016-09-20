@@ -79,15 +79,15 @@ Sub setting_format_AC()
     Columns("AX:AX").ColumnWidth = 15.29
     Columns("AY:AY").ColumnWidth = 20.43
     Columns("AZ:AZ").ColumnWidth = 43.71
-    Columns("BA:BA").EntireColumn.AutoFit
-    Columns("BB:BB").ColumnWidth = 13.57
-    Columns("BC:BC").ColumnWidth = 21.29
-    Columns("BD:BD").EntireColumn.AutoFit
-    Columns("BE:BE").EntireColumn.AutoFit
-    Columns("BF:BF").EntireColumn.AutoFit
-    Columns("BG:BG").ColumnWidth = 17.43
-    Columns("BH:BH").EntireColumn.AutoFit
-    Columns("BI:BI").ColumnWidth = 67
+    Columns("BA:BA").ColumnWidth = 45.14
+    Columns("BB:BB").ColumnWidth = 48
+    Columns("BC:BC").ColumnWidth = 24.29
+    Columns("BD:BD").ColumnWidth = 13.14
+    Columns("BE:BE").ColumnWidth = 18.86
+    Columns("BF:BF").ColumnWidth = 19.43
+    Columns("BG:BG").ColumnWidth = 19.29
+    Columns("BH:BH").ColumnWidth = 14.43
+    Columns("BI:BI").ColumnWidth = 35.71
     Columns("BJ:BJ").ColumnWidth = 56
 
     ' setting color of headers
@@ -304,20 +304,27 @@ Sub setting_format_AC()
     Columns("AJ:AJ").NumberFormat = "0%"
     Columns("AK:AK").NumberFormat = "0.00"
     Columns("AM:AX").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("BB:BB").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("BE:BE").NumberFormat = "m/d/yyyy"
-    Columns("BG:BG").NumberFormat = "m/d/yyyy"
-    Columns("BH:BH").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
+    Columns("BC:BC").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
+    Columns("BF:BF").NumberFormat = "m/d/yyyy"
+    Columns("BH:BH").NumberFormat = "m/d/yyyy"
+    Columns("BI:BI").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
     ' autofilter
     Selection.AutoFilter
     
+    ' freeze panes
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
+    
     ' hiding several fields
-    Columns("G:H").Select
+    Columns("D:H").Select
     Selection.EntireColumn.Hidden = True
     Columns("J:K").Select
     Selection.EntireColumn.Hidden = True
-    Columns("BA:BA").Select
+    Columns("P:R").Select
     Selection.EntireColumn.Hidden = True
     
 End Sub
