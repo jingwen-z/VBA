@@ -263,8 +263,9 @@ Sub setting_format_Table_Principale()
     ' setting format
     Columns("C:C").NumberFormat = "m/d/yyyy"
     Columns("AB:AI").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("AJ:AJ").NumberFormat = "0%"
+    Columns("AJ:AJ").NumberFormat = "0.0%"
     Columns("AK:AK").NumberFormat = "0.00"
+    Columns("AL:AL").NumberFormat = "0.0%"
     Columns("AO:AO").NumberFormat = "m/d/yyyy"
     Columns("AQ:AQ").NumberFormat = "m/d/yyyy"
     Columns("AR:AR").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
