@@ -223,13 +223,20 @@ Sub setting_format_GI_douteux()
     Columns("X:X").NumberFormat = "0%"
     Columns("AC:AD").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
+    ' autofilter
     Selection.AutoFilter
-    
+
+    ' freeze panes
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
+
+    ' hidding several fields
     Columns("A:D").Select
     Selection.EntireColumn.Hidden = True
     Columns("L:L").Select
     Selection.EntireColumn.Hidden = True
 
-    
 End Sub
-
