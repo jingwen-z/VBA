@@ -29,8 +29,10 @@ Sub setting_format_Banques()
         .Font.Bold = True
     End With
 
-    ' setting width of columns
+    ' setting height of row
     Rows("1:1").RowHeight = 36.75
+    
+    ' setting width of columns
     Columns("A:A").ColumnWidth = 53
     Columns("B:B").ColumnWidth = 32.29
     Columns("C:C").ColumnWidth = 40
@@ -178,7 +180,15 @@ Sub setting_format_Banques()
     
     Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
 
+    ' autofilter
     Selection.AutoFilter
+    
+    ' freeze panes
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
         
 End Sub
 
