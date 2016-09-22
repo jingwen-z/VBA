@@ -221,6 +221,7 @@ Sub setting_format_GI_douteux()
     Columns("V:V").NumberFormat = "0.0%"
     Columns("W:W").NumberFormat = "0.00"
     Columns("X:X").NumberFormat = "0.0%"
+    Columns("Z:Z").NumberFormat = "0%"
     Columns("AC:AD").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
     ' autofilter
