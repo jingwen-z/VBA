@@ -29,8 +29,10 @@ Sub setting_format_Table_Principale()
         .Font.Bold = True
     End With
 
-    ' setting width of columns
+    ' setting height of row
     Rows("1:1").RowHeight = 36.75
+    
+    ' setting width of columns
     Columns("A:A").ColumnWidth = 12.86
     Columns("B:B").ColumnWidth = 13
     Columns("C:C").ColumnWidth = 16.29
@@ -38,49 +40,49 @@ Sub setting_format_Table_Principale()
     Columns("E:E").ColumnWidth = 16.57
     Columns("F:F").ColumnWidth = 14.43
     Columns("G:G").ColumnWidth = 10.29
-    Columns("H:H").EntireColumn.AutoFit
+    Columns("H:H").ColumnWidth = 20.57
     Columns("I:I").ColumnWidth = 11.57
     Columns("K:K").ColumnWidth = 20.29
     Columns("M:M").ColumnWidth = 10.29
     Columns("N:N").ColumnWidth = 6
     Columns("O:O").EntireColumn.AutoFit
-    Columns("P:P").EntireColumn.AutoFit
-    Columns("Q:Q").EntireColumn.AutoFit
-    Columns("R:R").EntireColumn.AutoFit
+    Columns("P:P").ColumnWidth = 15.29
+    Columns("Q:Q").ColumnWidth = 15.57
+    Columns("R:R").ColumnWidth = 16.43
     Columns("S:S").EntireColumn.AutoFit
     Columns("T:T").EntireColumn.AutoFit
     Columns("U:U").EntireColumn.AutoFit
-    Columns("V:V").EntireColumn.AutoFit
-    Columns("W:W").EntireColumn.AutoFit
-    Columns("X:X").EntireColumn.AutoFit
+    Columns("V:V").ColumnWidth = 15.86
+    Columns("W:W").ColumnWidth = 24.29
+    Columns("X:X").ColumnWidth = 16
     Columns("Y:Y").ColumnWidth = 19
-    Columns("Z:Z").EntireColumn.AutoFit
+    Columns("Z:Z").ColumnWidth = 17.57
     Columns("AA:AA").ColumnWidth = 6.86
-    Columns("AB:AB").ColumnWidth = 21.57
-    Columns("AC:AC").ColumnWidth = 21.57
-    Columns("AD:AD").ColumnWidth = 22.14
+    Columns("AB:AB").ColumnWidth = 22.86
+    Columns("AC:AC").ColumnWidth = 21.71
+    Columns("AD:AD").ColumnWidth = 23
     Columns("AE:AE").ColumnWidth = 21.57
-    Columns("AF:AF").ColumnWidth = 21.86
+    Columns("AF:AF").ColumnWidth = 22.71
     Columns("AG:AG").ColumnWidth = 21.86
-    Columns("AH:AH").ColumnWidth = 21.71
+    Columns("AH:AH").ColumnWidth = 22.57
     Columns("AI:AI").ColumnWidth = 21.71
     Columns("AL:AL").ColumnWidth = 19
-    Columns("AM:AM").EntireColumn.AutoFit
-    Columns("AN:AN").EntireColumn.AutoFit
-    Columns("AO:AO").EntireColumn.AutoFit
-    Columns("AP:AP").EntireColumn.AutoFit
-    Columns("AQ:AQ").EntireColumn.AutoFit
-    Columns("AR:AR").EntireColumn.AutoFit
-    Columns("AS:AS").ColumnWidth = 11.29
-    Columns("AT:AT").ColumnWidth = 21.29
-    Columns("AU:AU").ColumnWidth = 20.71
-    Columns("AV:AV").ColumnWidth = 15.57
-    Columns("AW:AW").ColumnWidth = 27.43
+    Columns("AM:AM").ColumnWidth = 12.86
+    Columns("AN:AN").ColumnWidth = 16.57
+    Columns("AO:AO").ColumnWidth = 20.29
+    Columns("AP:AP").ColumnWidth = 20.71
+    Columns("AQ:AQ").ColumnWidth = 17.14
+    Columns("AR:AR").ColumnWidth = 19.14
+    Columns("AS:AS").ColumnWidth = 13.29
+    Columns("AT:AT").ColumnWidth = 24.29
+    Columns("AU:AU").ColumnWidth = 22.14
+    Columns("AV:AV").ColumnWidth = 18.14
+    Columns("AW:AW").ColumnWidth = 31.14
     Columns("AX:AX").ColumnWidth = 54.71
     Columns("AY:AY").ColumnWidth = 15.29
     Columns("AZ:AZ").ColumnWidth = 11.29
-    Columns("BA:BA").ColumnWidth = 15.57
-    Columns("BB:BB").ColumnWidth = 9.43
+    Columns("BA:BA").ColumnWidth = 18.14
+    Columns("BB:BB").ColumnWidth = 12.43
 
     ' setting color of headers
     Range("A1:E1").Select
