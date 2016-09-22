@@ -266,10 +266,16 @@ Sub setting_format_Table_Principale()
     Columns("AJ:AJ").NumberFormat = "0.0%"
     Columns("AK:AK").NumberFormat = "0.00"
     Columns("AL:AL").NumberFormat = "0.0%"
-    Columns("AO:AO").NumberFormat = "m/d/yyyy"
-    Columns("AQ:AQ").NumberFormat = "m/d/yyyy"
     Columns("AR:AR").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
+    ' autofilter
     Selection.AutoFilter
+
+    ' freeze panes
+    With ActiveWindow
+        .SplitColumn = 0
+        .SplitRow = 1
+    End With
+    ActiveWindow.FreezePanes = True
     
 End Sub
