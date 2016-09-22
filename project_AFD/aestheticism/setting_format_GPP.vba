@@ -28,17 +28,21 @@ Sub setting_format_GPP()
         .ThemeFont = xlThemeFontNone
     End With
 
+    ' setting height of row
+    Rows("3:3").RowHeight = 60.75
+
     ' setting width of columns
     Columns("A:A").ColumnWidth = 13.71
     Columns("B:B").ColumnWidth = 16.57
     Columns("C:C").ColumnWidth = 16.14
     Columns("D:D").ColumnWidth = 16.14
-    Columns("E:E").ColumnWidth = 9.43
-    Columns("F:F").ColumnWidth = 12.14
-    Columns("G:G").ColumnWidth = 14.71
-    Columns("H:H").ColumnWidth = 8.57
-    Columns("I:I").ColumnWidth = 13.43
-    Columns("K:K").ColumnWidth = 14.26
+    Columns("E:E").ColumnWidth = 13
+    Columns("F:F").ColumnWidth = 14.57
+    Columns("G:G").ColumnWidth = 18.86
+    Columns("H:H").ColumnWidth = 9.14
+    Columns("I:I").ColumnWidth = 16.14
+    Columns("J:J").ColumnWidth = 19
+    Columns("K:K").ColumnWidth = 19.29
     Columns("L:L").ColumnWidth = 12.71
     Columns("M:M").ColumnWidth = 10.71
     Columns("N:N").ColumnWidth = 13.71
@@ -277,6 +281,10 @@ Sub setting_format_GPP()
 
     'assigning for cell K2
     Range("K2").FormulaR1C1 = "=SUM(R[2]C:R[81]C)"
+
+    ' freeze panes
+    Rows("4:4").Select
+    ActiveWindow.FreezePanes = True
     
     'setting filter
     Range("A3:FS3").AutoFilter
