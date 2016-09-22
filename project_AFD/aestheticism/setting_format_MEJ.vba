@@ -333,17 +333,13 @@ Sub setting_format_MEJ()
     Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
 
     ' setting format
-    Columns("B:B").NumberFormat = "m/d/yyyy"
     Columns("P:S").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("T:T").NumberFormat = "0%"
+    Columns("T:T").NumberFormat = "0.0%"
     Columns("U:U").NumberFormat = "0.00"
-    Columns("W:W").NumberFormat = "m/d/yyyy"
     Columns("AO:AS").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("AU:AW").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("AX:AY").NumberFormat = "m/d/yyyy"
     Columns("BB:BC").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("BL:BN").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("BS:BT").NumberFormat = "m/d/yyyy"
     Columns("BU:BU").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     
     ' autofilter
