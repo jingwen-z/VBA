@@ -11,9 +11,9 @@ Sub hyperlinks_AC()
     
     Set wbkPrin = ThisWorkbook
     
-    ' open workbook "Arrêté_Comptable_copie"
+    ' open workbook "Arrêté_Comptable_31-03-16_copie"
     ' the address is variable
-    Set wbkOpenAC = Workbooks.Open("P:\BDDs\après ETL\copie\Arrêté_Comptable_copie.xlsm")
+    Set wbkOpenAC = Workbooks.Open("P:\BDDs\après ETL\copie\Arrêté_Comptable_31-03-16_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -31,7 +31,7 @@ Sub hyperlinks_AC()
         mR = Application.Match(shtPrin.Cells(nR, 13).Value, shtAC.Columns(13), 0)
         
             ' for every cell that is not empty,
-            ' search through all N concours in Arrêté_Comptable_copie
+            ' search through all N concours in Arrêté_Comptable_31-03-16_copie
             If IsError(mR) Then
                 ' write nothing in the cell
                 ' the column number is variable
@@ -45,7 +45,7 @@ Sub hyperlinks_AC()
                 ' the corresponding N concours for shtAC
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 55), _
-                Address:=wbkOpenAC.Path & "\Arrêté_Comptable_copie.xlsm", _
+                Address:=wbkOpenAC.Path & "\Arrêté_Comptable_31-03-16_copie.xlsm", _
                 SubAddress:="Arrêté_Comptable!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
