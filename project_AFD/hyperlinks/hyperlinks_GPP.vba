@@ -11,9 +11,9 @@ Sub hyperlinks_GPP()
     
     Set wbkPrin = ThisWorkbook
     
-    ' open workbook "GPP_copie"
+    ' open workbook "GPP_31-12-15_copie"
     ' the address is variable
-    Set wbkOpenGPP = Workbooks.Open("P:\BDDs\après ETL\copie\GPP_copie.xlsm")
+    Set wbkOpenGPP = Workbooks.Open("P:\BDDs\après ETL\copie\GPP_31-12-15_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -31,7 +31,7 @@ Sub hyperlinks_GPP()
         mR = Application.Match(shtPrin.Cells(nR, 13).Value, shtGPP.Columns(3), 0)
         
             ' for every cell that is not empty,
-            ' search through all N concours in GPP_copie
+            ' search through all N concours in GPP_31-12-15_copie
             If IsError(mR) Then
                 ' write nothing in the cell
                 ' the column number is variable
@@ -45,7 +45,7 @@ Sub hyperlinks_GPP()
                 ' the corresponding N concours for shtGPP
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 57), _
-                Address:=wbkOpenGPP.Path & "\GPP_copie.xlsm", _
+                Address:=wbkOpenGPP.Path & "\GPP_31-12-15_copie.xlsm", _
                 SubAddress:="GPP!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
@@ -54,6 +54,4 @@ Sub hyperlinks_GPP()
     wbkOpenGPP.Close False
 
 End Sub
-
-
 
