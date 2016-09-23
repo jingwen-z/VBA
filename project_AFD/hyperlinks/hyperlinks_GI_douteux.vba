@@ -11,9 +11,9 @@ Sub hyperlinks_GI_douteux()
     
     Set wbkPrin = ThisWorkbook
     
-    ' open workbook "GI_douteux_copie"
+    ' open workbook "GI_douteux_31-03-16_copie"
     ' the address is variable
-    Set wbkOpenGI = Workbooks.Open("P:\BDDs\après ETL\copie\GI_douteux_copie.xlsm")
+    Set wbkOpenGI = Workbooks.Open("P:\BDDs\après ETL\copie\GI_douteux_31-03-16_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -32,7 +32,7 @@ Sub hyperlinks_GI_douteux()
         mR = Application.Match(shtPrin.Cells(nR, 13).Value, shtGI.Columns(6), 0)
         
             ' for every cell that is not empty,
-            ' search through all N concours in GI_douteux_copie
+            ' search through all N concours in GI_douteux_31-03-16_copie
             If IsError(mR) Then
                 ' write nothing in the cell
                 ' the column number is variable
@@ -46,7 +46,7 @@ Sub hyperlinks_GI_douteux()
                 ' the corresponding N concours for shtGI
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 56), _
-                Address:=wbkOpenGI.Path & "\GI_douteux_copie.xlsm", _
+                Address:=wbkOpenGI.Path & "\GI_douteux_31-03-16_copie.xlsm", _
                 SubAddress:="GI!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
