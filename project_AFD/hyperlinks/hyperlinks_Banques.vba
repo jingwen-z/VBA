@@ -11,9 +11,9 @@ Sub hyperlinks_Banques()
     
     Set wbkPrin = ThisWorkbook
     
-    ' open workbook "Banques_copie"
+    ' open workbook "Banques_31-12-15_copie"
     ' the address is variable
-    Set wbkOpenBq = Workbooks.Open("P:\BDDs\après ETL\copie\Banques_copie.xlsm")
+    Set wbkOpenBq = Workbooks.Open("P:\BDDs\après ETL\copie\Banques_31-12-15_copie.xlsm")
     
     ' define worksheets
     Set shtPrin = wbkPrin.Sheets("Table_Principale")
@@ -31,7 +31,7 @@ Sub hyperlinks_Banques()
         mR = Application.Match(shtPrin.Cells(nR, 19).Value, shtBq.Columns(2), 0)
         
             ' for every cell that is not empty,
-            ' search through all N concours in Banques_copie
+            ' search through all N concours in Banques_31-12-15_copie
             If IsError(mR) Then
                 ' write nothing in the cell
                 ' the column number is variable
@@ -45,7 +45,7 @@ Sub hyperlinks_Banques()
                 ' the corresponding N concours for shtBq
                 ' the column number is variable
                 shtPrin.Hyperlinks.Add Anchor:=Cells(nR, 59), _
-                Address:=wbkOpenBq.Path & "\Banques_copie.xlsm", _
+                Address:=wbkOpenBq.Path & "\Banques_31-12-15_copie.xlsm", _
                 SubAddress:="Banques!" & slctRng, _
                 TextToDisplay:="cliquez ici"
             End If
