@@ -305,8 +305,6 @@ Sub setting_format_AC()
     Columns("AK:AK").NumberFormat = "0.00"
     Columns("AM:AX").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
     Columns("BC:BC").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
-    Columns("BF:BF").NumberFormat = "m/d/yyyy"
-    Columns("BH:BH").NumberFormat = "m/d/yyyy"
     Columns("BI:BI").NumberFormat = "_(* #,##0.00_);_(* (#,##0.00);_(* ""-""??_);_(@_)"
 
     ' autofilter
