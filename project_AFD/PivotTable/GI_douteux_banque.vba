@@ -25,12 +25,29 @@ Sub GI_douteux_banque()
              .Position = 1
         End With
             
-        .AddDataField .PivotFields("Autorisation nette Montant du prêt en €"), _
-                           "Montant des prêts(en €)", xlSum
-        .AddDataField .PivotFields("Encours de risque au 31/03/2016 en €"), _
-                           "Encours(en €)", xlSum
-        .AddDataField .PivotFields("Provision au 31/03/2016 en €"), _
-                           "Provision(en €)", xlSum
+        .CalculatedFields.Add "Montant des prêts(en M€)", _
+        "= 'Autorisation nette Montant du prêt en €'/1000000", True
+            
+        With .PivotFields("Montant des prêts(en M€)")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
+
+        .CalculatedFields.Add "Encours(en M€)", _
+        "= 'Encours de risque au 31/03/2016 en €'/1000000", True
+            
+        With .PivotFields("Encours(en M€)")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
+
+        .CalculatedFields.Add "Provision(en M€)", _
+        "= 'Provision au 31/03/2016 en €'/1000000", True
+            
+        With .PivotFields("Provision(en M€)")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
 
     End With
     
