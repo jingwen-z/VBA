@@ -3,7 +3,7 @@ Public shtSum As Worksheet
 Public pvCache As PivotCache
 Public pvTable As PivotTable
 
-Sub Sum_Octroi_GI_et_GP_1()
+Sub Sum_Octroi_GI_et_GP()
     
     Set shtData = Worksheets("Table_Principale")
     Set shtSum = Worksheets("Feuil1")
@@ -49,8 +49,13 @@ Sub Sum_Octroi_GI_et_GP_1()
              .PivotItems("2007").Visible = False
         End With
             
-        .AddDataField .PivotFields("Autorisation nette Montant du prêt en €"), _
-                           "Octroi GI et GP(en €)", xlSum
+        .CalculatedFields.Add "Octroi (en M€) GI et GP", _
+        "= 'Autorisation nette Montant du prêt en €'/1000000", True
+            
+        With .PivotFields("Octroi (en M€) GI et GP")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
 
     End With
     
@@ -59,7 +64,7 @@ Sub Sum_Octroi_GI_et_GP_1()
     
 End Sub
 
-Sub Sum_Octroi_GI_et_GP_2()
+Sub Sum_Encours_GI_et_GP()
     
     Set shtData = Worksheets("Table_Principale")
     Set shtSum = Worksheets("Feuil1")
@@ -86,8 +91,13 @@ Sub Sum_Octroi_GI_et_GP_2()
              .PivotItems("FP").Visible = False
         End With
                     
-        .AddDataField .PivotFields("Encours de risque DBO au 31/03/2016"), _
-                           "Encours actuel(en €)", xlSum
+        .CalculatedFields.Add "Encours (en M€) GI et GP", _
+        "= 'Encours de risque DBO au 31/03/2016'/1000000", True
+            
+        With .PivotFields("Encours (en M€) GI et GP")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
 
     End With
     
