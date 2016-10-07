@@ -49,7 +49,7 @@ Sub Moyenne_Octroi_GI_banque_1()
              .PivotItems("2007").Visible = False
         End With
             
-        .AddDataField .PivotFields("Autorisation nette Montant du prêt en €"), _
+        .AddDataField .PivotFields("Autorisation nette Montant garanti en €"), _
                            "Moyenne Octroi GI(en €)", xlAverage
 
     End With
