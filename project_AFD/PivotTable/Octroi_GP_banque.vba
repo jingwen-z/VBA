@@ -10,7 +10,7 @@ Sub Somme_Octroi_GP_banque()
 
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:="GPP!R1C1:R81C19")
+                SourceData:="GPP!R1C1:R81C176")
                 
     Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A5"))
     
@@ -45,6 +45,44 @@ Sub Somme_Octroi_GP_banque()
     
 End Sub
 
+
+Sub Somme_Encours_GP_banque()
+    
+    Set shtData = Worksheets("GPP")
+    Set shtSum = Worksheets("Feuil1")
+
+    Set pvCache = ThisWorkbook.PivotCaches.Create( _
+                SourceType:=xlDatabase, _
+                SourceData:="GPP!R1C1:R81C176")
+                
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A15"))
+    
+    With pvTable
+        With .PivotFields("Pays")
+             .Orientation = xlPageField
+             .Position = 1
+        End With
+        
+        With .PivotFields("Banque")
+             .Orientation = xlRowField
+             .Position = 1
+        End With
+        
+        .CalculatedFields.Add "Encours actuel(en M€)", _
+        "= 'Encours de Garanties Sous-Participées en Euro11'/1000000", True
+            
+        With .PivotFields("Encours actuel(en M€)")
+             .Orientation = xlDataField
+             .NumberFormat = "#,##0.00"
+        End With
+
+    End With
+    
+    pvTable.PivotFields("Pays").ClearAllFilters
+    pvTable.PivotFields("Pays").CurrentPage = "Côte d'Ivoire"
+    
+End Sub
+
 Sub GP_taux_utilisation_banque()
     
     Set shtData = Worksheets("GPP")
@@ -52,9 +90,9 @@ Sub GP_taux_utilisation_banque()
 
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:="GPP!R1C1:R81C19")
+                SourceData:="GPP!R1C1:R81C176")
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A15"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A24"))
     
     With pvTable
         With .PivotFields("Pays")
