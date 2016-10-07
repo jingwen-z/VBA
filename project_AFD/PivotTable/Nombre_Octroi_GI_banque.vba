@@ -49,7 +49,7 @@ Sub Nombre_Octroi_GI_banque()
              .PivotItems("2007").Visible = False
         End With
             
-        .AddDataField .PivotFields("Autorisation nette Montant du prêt en €"), _
+        .AddDataField .PivotFields("Autorisation nette Montant garanti en €"), _
                            "Octroi GI(en nombre)", xlCount
 
     End With
