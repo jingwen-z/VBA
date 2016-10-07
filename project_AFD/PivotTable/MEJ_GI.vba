@@ -121,7 +121,7 @@ Sub MEJ_montant_indemnisation_max_GI()
 
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:="MEJ!R1C1:R297C79")
+                SourceData:="MEJ!R1C1:R297C80")
                 
     Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A22"))
     
@@ -232,7 +232,7 @@ Sub MEJ_montant_indemnisation_réel_GI()
 
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:="MEJ!R1C1:R297C79")
+                SourceData:="MEJ!R1C1:R297C80")
                 
     Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A38"))
     
