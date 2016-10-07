@@ -50,7 +50,7 @@ Sub Sum_Octroi_GI_et_GP()
         End With
             
         .CalculatedFields.Add "Octroi (en M€) GI et GP", _
-        "= 'Autorisation nette Montant du prêt en €'/1000000", True
+        "= 'Autorisation nette Montant garanti en €'/1000000", True
             
         With .PivotFields("Octroi (en M€) GI et GP")
              .Orientation = xlDataField
