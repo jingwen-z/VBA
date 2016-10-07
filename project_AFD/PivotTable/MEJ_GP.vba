@@ -86,7 +86,6 @@ Sub MEJ_taux_de_sinistralité_GP()
         With .PivotFields("taux de sinistralité GP")
              .Orientation = xlDataField
              .NumberFormat = "#,##0.00"
-
         End With
     
     End With
