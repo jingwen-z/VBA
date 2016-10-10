@@ -1,3 +1,8 @@
+Public shtData As Worksheet
+Public shtSum As Worksheet
+Public pvCache As PivotCache
+Public pvTable As PivotTable
+
 Sub MEJ_montant_indemnisation_réel_GP()
     
     Set shtData = Worksheets("MEJ")
