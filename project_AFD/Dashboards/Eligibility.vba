@@ -1,5 +1,8 @@
 Sub Eligibilité_financière()
 
+    Dim wbkThis AS Workbook
+    Dim wbkOpen AS Workbook
+    
     Set wbkThis = ThisWorkbook
     Set wbkOpen = Workbooks.Open(wbkThis.Path & "\Eligibilité financière_TdB.xlsx")
 
