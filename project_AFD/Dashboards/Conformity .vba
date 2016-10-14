@@ -1,5 +1,8 @@
 Sub Conformité()
-
+    
+    Dim wbkThis AS Workbook
+    Dim wbkOpen AS Workbook
+    
     Set wbkThis = ThisWorkbook
     Set wbkOpen = Workbooks.Open(wbkThis.Path & "\Conformité_TdB.xlsx")
 
