@@ -1,10 +1,10 @@
-Public shtData As Worksheet
-Public shtSum As Worksheet
-Public pvCache As PivotCache
-Public pvTable As PivotTable
-
 Sub GI_douteux_banque()
-    
+
+    Dim shtData As Worksheet
+    Dim shtSum As Worksheet
+    Dim pvCache As PivotCache
+    Dim pvTable As PivotTable
+
     Set shtData = Worksheets("GI")
     Set shtSum = Worksheets("Feuil1")
     
