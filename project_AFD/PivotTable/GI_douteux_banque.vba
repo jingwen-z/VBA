@@ -12,12 +12,25 @@ Sub GI_douteux_banque()
                 SourceType:=xlDatabase, _
                 SourceData:=shtData.Range("A1").CurrentRegion)
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A5"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A6"))
     
     With pvTable
         With .PivotFields("Pays")
              .Orientation = xlPageField
              .Position = 1
+        End With
+
+        With .PivotFields("Indicateur sain/douteux détaillé au 30/09/15")
+             .Orientation = xlPageField
+             .Position = 1
+        End With
+        
+        With .PivotFields("Indicateur sain/douteux détaillé au 30/09/15")
+             .PivotItems("0").Visible = False
+             .PivotItems("Garantie échue").Visible = False
+             .PivotItems("Pas encore décaissé").Visible = False
+             .PivotItems("Prêt échu").Visible = False
+             .PivotItems("S").Visible = False
         End With
         
         With .PivotFields("Bénéficiaire Primaire")
@@ -25,12 +38,12 @@ Sub GI_douteux_banque()
              .Position = 1
         End With
             
-        .CalculatedFields.Add "Montant des prêts(en M€)", _
-        "= 'Autorisation nette Montant du prêt en €'/1000000", True
+        .CalculatedFields.Add "Montant garanti(en M€)", _
+        "= 'Autorisation nette Montant garanti en €'/1000000", True
             
-        With .PivotFields("Montant des prêts(en M€)")
+        With .PivotFields("Montant garanti(en M€)")
              .Orientation = xlDataField
-             .NumberFormat = "#,##0.00"
+             .NumberFormat = "#,##0.000"
         End With
 
         .CalculatedFields.Add "Encours(en M€)", _
