@@ -1,13 +1,18 @@
 Sub Octroi_GI_Nombre()
     
+    Dim shtData As Worksheet
+    Dim shtSum As Worksheet
+    Dim pvCache As PivotCache
+    Dim pvTable As PivotTable
+    
     Set shtData = Worksheets("Table_Principale")
     Set shtSum = Worksheets("Feuil1")
     
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:=shtData.Range("A1").CurrentRegion)
+                SourceData:="Table_Principale!R1C1:R1563C54")
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A99"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A134"))
     
     With pvTable
         With .PivotFields("Pays")
