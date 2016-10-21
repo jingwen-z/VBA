@@ -1,18 +1,18 @@
-Public shtData As Worksheet
-Public shtSum As Worksheet
-Public pvCache As PivotCache
-Public pvTable As PivotTable
+Sub MEJ_Nombre()
 
-Sub Nombre_Octroi_GI_banque()
-    
+    Dim shtData As Worksheet
+    Dim shtSum As Worksheet
+    Dim pvCache As PivotCache
+    Dim pvTable As PivotTable
+
     Set shtData = Worksheets("MEJ")
     Set shtSum = Worksheets("Feuil1")
     
     Set pvCache = ThisWorkbook.PivotCaches.Create( _
                 SourceType:=xlDatabase, _
-                SourceData:="MEJ!R1C1:R297C80")
+                SourceData:="MEJ!R1C1:R297C83")
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("Y6"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("AK6"))
     
     With pvTable
         With .PivotFields("Pays")
@@ -21,8 +21,12 @@ Sub Nombre_Octroi_GI_banque()
         End With
         
         With .PivotFields("Type de garantie")
-             .Orientation = xlPageField
+             .Orientation = xlRowField
              .Position = 1
+        End With
+        
+        With .PivotFields("Type de garantie")
+             .PivotItems("AG").Visible = False
         End With
         
         With .PivotFields("Année d'autorisation")
@@ -48,8 +52,7 @@ Sub Nombre_Octroi_GI_banque()
     pvTable.PivotFields("Pays").ClearAllFilters
     pvTable.PivotFields("Pays").CurrentPage = "COTE D'IVOIRE"
     
-    pvTable.PivotFields("Type de garantie").ClearAllFilters
-    pvTable.PivotFields("Type de garantie").CurrentPage = "AI"
+    'pvTable.PivotFields("Type de garantie").ClearAllFilters
+    'pvTable.PivotFields("Type de garantie").CurrentPage = "AI"
     
 End Sub
-
