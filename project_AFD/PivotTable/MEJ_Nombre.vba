@@ -52,7 +52,4 @@ Sub MEJ_Nombre()
     pvTable.PivotFields("Pays").ClearAllFilters
     pvTable.PivotFields("Pays").CurrentPage = "COTE D'IVOIRE"
     
-    'pvTable.PivotFields("Type de garantie").ClearAllFilters
-    'pvTable.PivotFields("Type de garantie").CurrentPage = "AI"
-    
 End Sub
