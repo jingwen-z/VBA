@@ -1,4 +1,4 @@
-Sub MEJ_perte_calculée_par_banque()
+Sub MEJ_perte_calculée_par_banque_GI()
     
     Dim shtData As Worksheet
     Dim shtSum As Worksheet
