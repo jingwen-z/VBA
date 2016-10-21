@@ -3,7 +3,7 @@ Public shtSum As Worksheet
 Public pvCache As PivotCache
 Public pvTable As PivotTable
 
-Sub Somme_Octroi_GP_banque()
+Sub Octroi_GP_banque_Somme()
     
     Set shtData = Worksheets("GPP")
     Set shtSum = Worksheets("Feuil1")
@@ -46,7 +46,7 @@ Sub Somme_Octroi_GP_banque()
 End Sub
 
 
-Sub Somme_Encours_GP_banque()
+Sub Encours_GP_banque_Somme()
     
     Set shtData = Worksheets("GPP")
     Set shtSum = Worksheets("Feuil1")
@@ -55,7 +55,7 @@ Sub Somme_Encours_GP_banque()
                 SourceType:=xlDatabase, _
                 SourceData:="GPP!R1C1:R81C176")
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A15"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A20"))
     
     With pvTable
         With .PivotFields("Pays")
@@ -92,7 +92,7 @@ Sub GP_taux_utilisation_banque()
                 SourceType:=xlDatabase, _
                 SourceData:="GPP!R1C1:R81C176")
                 
-    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A24"))
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A34"))
     
     With pvTable
         With .PivotFields("Pays")
@@ -118,6 +118,37 @@ Sub GP_taux_utilisation_banque()
              .NumberFormat = "#,##0.00"
         End With
 
+    End With
+    
+    pvTable.PivotFields("Pays").ClearAllFilters
+    pvTable.PivotFields("Pays").CurrentPage = "Côte d'Ivoire"
+    
+End Sub
+
+Sub GP_nombre()
+    
+    Set shtData = Worksheets("GPP")
+    Set shtSum = Worksheets("Feuil1")
+
+    Set pvCache = ThisWorkbook.PivotCaches.Create( _
+                SourceType:=xlDatabase, _
+                SourceData:="GPP!R1C1:R81C19")
+                
+    Set pvTable = pvCache.CreatePivotTable(shtSum.Range("A49"))
+    
+    With pvTable
+        With .PivotFields("Pays")
+             .Orientation = xlPageField
+             .Position = 1
+        End With
+                
+        With .PivotFields("Année d'autorisation")
+             .Orientation = xlColumnField
+             .Position = 1
+        End With
+                          
+        .AddDataField .PivotFields("Montant d'enveloppe en EUR"), _
+                           "GP(en nombre)", xlCount
     End With
     
     pvTable.PivotFields("Pays").ClearAllFilters
