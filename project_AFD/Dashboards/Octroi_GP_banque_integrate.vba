@@ -5,29 +5,51 @@ Sub Octroi_GP()
     Dim Rng As Range
     
     Set wbkThis = ThisWorkbook
-    Set wbkOpen = Workbooks.Open(wbkThis.Path & "\GPP_31-12-15_TdB.xlsm")
+    Set wbkOpen = Workbooks.Open(wbkThis.Path & "\GPP_31-12-15_TCD.xlsm")
     
-    wbkOpen.Worksheets("Feuil1").Range("A6:H9").Copy wbkThis.Worksheets("Feuil1").Range("B49")
+    wbkOpen.Worksheets("Feuil1").Range("A6:H9").Copy wbkThis.Worksheets("Feuil1").Range("B43")
     
-    wbkOpen.Worksheets("Feuil1").Range("A26:H26").Copy
-    wbkThis.Worksheets("Feuil1").Range("B51:I51").Insert Shift:=xlDown
-    wbkOpen.Worksheets("Feuil1").Range("B15:B16").Copy wbkThis.Worksheets("Feuil1").Range("J49")
+    wbkOpen.Worksheets("Feuil1").Range("A36:H36").Copy
+    wbkThis.Worksheets("Feuil1").Range("B45:I45").Insert Shift:=xlDown
+    wbkOpen.Worksheets("Feuil1").Range("B20:B21").Copy wbkThis.Worksheets("Feuil1").Range("J43")
         
-    wbkOpen.Worksheets("Feuil1").Range("A27:H27").Copy
-    wbkThis.Worksheets("Feuil1").Range("B53:I53").Insert Shift:=xlDown
-    wbkOpen.Worksheets("Feuil1").Range("B17").Copy wbkThis.Worksheets("Feuil1").Range("J52")
+    wbkOpen.Worksheets("Feuil1").Range("A37:H37").Copy
+    wbkThis.Worksheets("Feuil1").Range("B47:I47").Insert Shift:=xlDown
+    wbkOpen.Worksheets("Feuil1").Range("B22").Copy wbkThis.Worksheets("Feuil1").Range("J46")
     
-    wbkOpen.Worksheets("Feuil1").Range("A28:H28").Copy
-    wbkThis.Worksheets("Feuil1").Range("B55:I55").Insert Shift:=xlDown
-    wbkOpen.Worksheets("Feuil1").Range("B18").Copy wbkThis.Worksheets("Feuil1").Range("J54")
+    wbkOpen.Worksheets("Feuil1").Range("A38:H38").Copy
+    wbkThis.Worksheets("Feuil1").Range("B49:I49").Insert Shift:=xlDown
+    wbkOpen.Worksheets("Feuil1").Range("B23").Copy wbkThis.Worksheets("Feuil1").Range("J48")
         
-    wbkThis.Worksheets("Feuil1").Range("B49").FormulaR1C1 = "Octroi GP (en M€)"
-    wbkThis.Worksheets("Feuil1").Range("I49").FormulaR1C1 = "Total"
-    wbkThis.Worksheets("Feuil1").Range("J49").FormulaR1C1 = "Encours"
-    wbkThis.Worksheets("Feuil1").Range("B51").FormulaR1C1 = "Taux d'utilisation"
-    wbkThis.Worksheets("Feuil1").Range("B53").FormulaR1C1 = "Taux d'utilisation"
-    wbkThis.Worksheets("Feuil1").Range("B55").FormulaR1C1 = "Taux d'utilisation"
+    With wbkThis.Worksheets("Feuil1")
+         .Range("B43").FormulaR1C1 = "Octroi GP (en M€)"
+         .Range("I43").FormulaR1C1 = "Total"
+         .Range("J43").FormulaR1C1 = "Encours act."
+         .Range("B45").FormulaR1C1 = "Taux d'utilisation"
+         .Range("B47").FormulaR1C1 = "Taux d'utilisation"
+         .Range("B49").FormulaR1C1 = "Taux d'utilisation"
+         
+         .Range("C45:I45").NumberFormat = "0.00%"
+         .Range("C47:I47").NumberFormat = "0.00%"
+         .Range("C49:I49").NumberFormat = "0.00%"
+
+    End With
     
+    With wbkThis.Worksheets("Feuil1").Range("B45:J45,B47:J47,B49:J49")
+        .Borders(xlDiagonalDown).LineStyle = xlNone
+        .Borders(xlDiagonalUp).LineStyle = xlNone
+        .Borders(xlEdgeLeft).LineStyle = xlNone
+        .Borders(xlEdgeTop).LineStyle = xlNone
+            
+        With .Borders(xlEdgeBottom)
+            .LineStyle = xlContinuous
+            .ThemeColor = 5
+            .TintAndShade = 0.399914548173467
+            .Weight = xlThin
+        End With
+         
+    End With
+
     wbkOpen.Close False
     
     For Each Rng In Range("C50:H55")
