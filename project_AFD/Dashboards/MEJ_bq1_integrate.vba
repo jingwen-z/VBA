@@ -104,7 +104,8 @@ Sub MEJ_SGBCI()
         .Range("B91").FormulaR1C1 = "Taux de sinistralité 3"
         .Range("B92").FormulaR1C1 = "perte provisoire calculée par la banque"
         .Range("B93").FormulaR1C1 = "Taux de sinistralité 4"
-
+    End With
+    
     With wbkThis.Worksheets("Feuil1").Range("B87:F87,B89:F89,B91:F91,B93:F93")
         .Borders(xlDiagonalDown).LineStyle = xlNone
         .Borders(xlDiagonalUp).LineStyle = xlNone
@@ -119,12 +120,7 @@ Sub MEJ_SGBCI()
         End With
         
     End With
-
-        '.Range("B87:G87").Borders(xlEdgeBottom).LineStyle = xlNone
-        '.Range("B89:G89").Borders(xlEdgeBottom).LineStyle = xlNone
         
-    End With
-    
     wbkOpen.Close False
     wbkOpen2.Close False
 
