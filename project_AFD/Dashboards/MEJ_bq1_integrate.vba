@@ -4,22 +4,23 @@ Sub MEJ_SGBCI()
 
     Set wbkThis = ThisWorkbook
     Set wbkOpen = Workbooks.Open(wbkThis.Path & "\MEJ_30-06-16_TCD.xlsm")
-    Set wbkOpen2 = Workbooks.Open(wbkThis.Path & "\GPP_31-12-15_TCD.xlsm")
+    Set wbkOpen2 = Workbooks.Open(wbkThis.Path & "\Table_Principale_30-06-16_TCD.xlsm")
 
-    wbkOpen.Worksheets("Feuil1").Range("N7:P8").Copy wbkThis.Worksheets("Feuil1").Range("B73")
-    wbkOpen2.Worksheets("Feuil1").Range("C59").Copy wbkThis.Worksheets("Feuil1").Range("C76")
+    wbkOpen.Worksheets("Feuil1").Range("X7:AB8").Copy wbkThis.Worksheets("Feuil1").Range("B85")
+    wbkOpen2.Worksheets("Feuil1").Range("A156:D156").Copy wbkThis.Worksheets("Feuil1").Range("B88")
+    wbkOpen2.Worksheets("Feuil1").Range("G156").Copy wbkThis.Worksheets("Feuil1").Range("F88")
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("D76").FormulaR1C1 = "=SUM(RC[-1]:RC[-1])"
-        
-        .Range("C75").FormulaR1C1 = .Range("C74").Value / .Range("C76").Value
-        .Range("D75").FormulaR1C1 = .Range("D74").Value / .Range("D76").Value
+        .Range("C87").FormulaR1C1 = .Range("C86").Value / .Range("C88").Value
+        .Range("D87").FormulaR1C1 = .Range("D86").Value / .Range("D88").Value
+        .Range("E87").FormulaR1C1 = .Range("E86").Value / .Range("E88").Value
+        .Range("F87").FormulaR1C1 = .Range("F86").Value / .Range("F88").Value
     
-        .Range("B76:D76").Delete Shift:=xlToLeft
-        .Range("C75:D75").NumberFormat = "0.00%"
-        .Range("B74:D74").Font.Bold = False
+        .Range("B88:F88").Delete Shift:=xlToLeft
+        .Range("C87:F87").NumberFormat = "0.00%"
+        .Range("B86:F86").Font.Bold = False
     
-        With .Range("B74:D74").Interior
+        With .Range("B86:F86").Interior
              .Pattern = xlNone
              .TintAndShade = 0
              .PatternTintAndShade = 0
@@ -27,20 +28,21 @@ Sub MEJ_SGBCI()
     
     End With
     
-    wbkOpen.Worksheets("Feuil1").Range("N16:P16").Copy wbkThis.Worksheets("Feuil1").Range("B76")
-    wbkOpen2.Worksheets("Feuil1").Range("C59").Copy wbkThis.Worksheets("Feuil1").Range("C78")
+    wbkOpen.Worksheets("Feuil1").Range("X16:AB16").Copy wbkThis.Worksheets("Feuil1").Range("B88")
+    wbkOpen2.Worksheets("Feuil1").Range("A156:D156").Copy wbkThis.Worksheets("Feuil1").Range("B90")
+    wbkOpen2.Worksheets("Feuil1").Range("G156").Copy wbkThis.Worksheets("Feuil1").Range("F90")
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("D78").FormulaR1C1 = "=SUM(RC[-1]:RC[-1])"
-        
-        .Range("C77").FormulaR1C1 = .Range("C76").Value / .Range("C78").Value
-        .Range("D77").FormulaR1C1 = .Range("D76").Value / .Range("D78").Value
+        .Range("C89").FormulaR1C1 = .Range("C88").Value / .Range("C90").Value
+        .Range("D89").FormulaR1C1 = .Range("D88").Value / .Range("D90").Value
+        .Range("E89").FormulaR1C1 = .Range("E88").Value / .Range("E90").Value
+        .Range("F89").FormulaR1C1 = .Range("F88").Value / .Range("F90").Value
     
-        .Range("B78:D78").Delete Shift:=xlToLeft
-        .Range("C77:D77").NumberFormat = "0.00%"
-        .Range("B76:D76").Font.Bold = False
+        .Range("B90:F90").Delete Shift:=xlToLeft
+        .Range("C89:F89").NumberFormat = "0.00%"
+        .Range("B88:F88").Font.Bold = False
     
-        With .Range("B76:D76").Interior
+        With .Range("B88:F88").Interior
              .Pattern = xlNone
              .TintAndShade = 0
              .PatternTintAndShade = 0
@@ -48,20 +50,21 @@ Sub MEJ_SGBCI()
     
     End With
     
-    wbkOpen.Worksheets("Feuil1").Range("N24:P24").Copy wbkThis.Worksheets("Feuil1").Range("B78")
-    wbkOpen2.Worksheets("Feuil1").Range("C59").Copy wbkThis.Worksheets("Feuil1").Range("C80")
+    wbkOpen.Worksheets("Feuil1").Range("X24:AB24").Copy wbkThis.Worksheets("Feuil1").Range("B90")
+    wbkOpen2.Worksheets("Feuil1").Range("A156:D156").Copy wbkThis.Worksheets("Feuil1").Range("B92")
+    wbkOpen2.Worksheets("Feuil1").Range("G156").Copy wbkThis.Worksheets("Feuil1").Range("F92")
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("D80").FormulaR1C1 = "=SUM(RC[-1]:RC[-1])"
-        
-        .Range("C79").FormulaR1C1 = .Range("C78").Value / .Range("C80").Value
-        .Range("D79").FormulaR1C1 = .Range("D78").Value / .Range("D80").Value
+        .Range("C91").FormulaR1C1 = .Range("C90").Value / .Range("C92").Value
+        .Range("D91").FormulaR1C1 = .Range("D90").Value / .Range("D92").Value
+        .Range("E91").FormulaR1C1 = .Range("E90").Value / .Range("E92").Value
+        .Range("F91").FormulaR1C1 = .Range("F90").Value / .Range("F92").Value
     
-        .Range("B80:D80").Delete Shift:=xlToLeft
-        .Range("C79:D79").NumberFormat = "0.00%"
-        .Range("B78:D78").Font.Bold = False
+        .Range("B92:F92").Delete Shift:=xlToLeft
+        .Range("C91:F91").NumberFormat = "0.00%"
+        .Range("B90:F90").Font.Bold = False
     
-        With .Range("B78:D78").Interior
+        With .Range("B90:F90").Interior
              .Pattern = xlNone
              .TintAndShade = 0
              .PatternTintAndShade = 0
@@ -69,20 +72,21 @@ Sub MEJ_SGBCI()
     
     End With
     
-    wbkOpen.Worksheets("Feuil1").Range("N35:P35").Copy wbkThis.Worksheets("Feuil1").Range("B80")
-    wbkOpen2.Worksheets("Feuil1").Range("C59").Copy wbkThis.Worksheets("Feuil1").Range("C82")
+    wbkOpen.Worksheets("Feuil1").Range("X35:AB35").Copy wbkThis.Worksheets("Feuil1").Range("B92")
+    wbkOpen2.Worksheets("Feuil1").Range("A156:D156").Copy wbkThis.Worksheets("Feuil1").Range("B94")
+    wbkOpen2.Worksheets("Feuil1").Range("G156").Copy wbkThis.Worksheets("Feuil1").Range("F94")
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("D82").FormulaR1C1 = "=SUM(RC[-1]:RC[-1])"
-        
-        .Range("C81").FormulaR1C1 = .Range("C80").Value / .Range("C82").Value
-        .Range("D81").FormulaR1C1 = .Range("D80").Value / .Range("D82").Value
+        .Range("C93").FormulaR1C1 = .Range("C92").Value / .Range("C94").Value
+        .Range("D93").FormulaR1C1 = .Range("D92").Value / .Range("D94").Value
+        .Range("E93").FormulaR1C1 = .Range("E92").Value / .Range("E94").Value
+        .Range("F93").FormulaR1C1 = .Range("F92").Value / .Range("F94").Value
     
-        .Range("B82:D82").Delete Shift:=xlToLeft
-        .Range("C81:D81").NumberFormat = "0.00%"
-        .Range("B80:D80").Font.Bold = False
+        .Range("B94:F94").Delete Shift:=xlToLeft
+        .Range("C93:F93").NumberFormat = "0.00%"
+        .Range("B92:F92").Font.Bold = False
     
-        With .Range("B80:D80").Interior
+        With .Range("B92:F92").Interior
              .Pattern = xlNone
              .TintAndShade = 0
              .PatternTintAndShade = 0
@@ -91,22 +95,17 @@ Sub MEJ_SGBCI()
     End With
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("B73").FormulaR1C1 = "MEJ (en M€) GP"
-        .Range("B74").FormulaR1C1 = "montant d'engagement garanti"
-        .Range("B75").FormulaR1C1 = "Taux de sinistralité 1"
-        .Range("B76").FormulaR1C1 = "montant d'indemnisation max"
-        .Range("B77").FormulaR1C1 = "Taux de sinistralité 2"
-        .Range("B78").FormulaR1C1 = "montant d'indemnisation réel"
-        .Range("B79").FormulaR1C1 = "Taux de sinistralité 3"
-        .Range("B80").FormulaR1C1 = "perte provisoire calculée par la banque"
-        .Range("B81").FormulaR1C1 = "Taux de sinistralité 4"
-        .Range("D73").FormulaR1C1 = "Avant 2016"
-                
-        .Range("B75:D75").Borders(xlEdgeBottom).LineStyle = xlNone
-        .Range("B77:D77").Borders(xlEdgeBottom).LineStyle = xlNone
-    End With
+        .Range("B85").FormulaR1C1 = "MEJ (en M€) SGBCI"
+        .Range("B86").FormulaR1C1 = "montant d'engagement garanti"
+        .Range("B87").FormulaR1C1 = "Taux de sinistralité 1"
+        .Range("B88").FormulaR1C1 = "montant d'indemnisation max"
+        .Range("B89").FormulaR1C1 = "Taux de sinistralité 2"
+        .Range("B90").FormulaR1C1 = "montant d'indemnisation réel"
+        .Range("B91").FormulaR1C1 = "Taux de sinistralité 3"
+        .Range("B92").FormulaR1C1 = "perte provisoire calculée par la banque"
+        .Range("B93").FormulaR1C1 = "Taux de sinistralité 4"
 
-    With wbkThis.Worksheets("Feuil1").Range("B75:D75,B77:D77,B79:D79,B81:D81")
+    With wbkThis.Worksheets("Feuil1").Range("B87:F87,B89:F89,B91:F91,B93:F93")
         .Borders(xlDiagonalDown).LineStyle = xlNone
         .Borders(xlDiagonalUp).LineStyle = xlNone
         .Borders(xlEdgeLeft).LineStyle = xlNone
@@ -121,6 +120,11 @@ Sub MEJ_SGBCI()
         
     End With
 
+        '.Range("B87:G87").Borders(xlEdgeBottom).LineStyle = xlNone
+        '.Range("B89:G89").Borders(xlEdgeBottom).LineStyle = xlNone
+        
+    End With
+    
     wbkOpen.Close False
     wbkOpen2.Close False
 
