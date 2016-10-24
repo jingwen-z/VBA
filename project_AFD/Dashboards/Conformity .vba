@@ -4,14 +4,14 @@ Sub Conformité()
     Dim wbkOpen AS Workbook
     
     Set wbkThis = ThisWorkbook
-    Set wbkOpen = Workbooks.Open(wbkThis.Path & "\Conformité_TdB.xlsx")
+    Set wbkOpen = Workbooks.Open(wbkThis.Path & "\Conformité_TCD.xlsx")
 
-    wbkOpen.Worksheets("TdB___Conformité").Range("A1:D7").Copy wbkThis.Worksheets("Feuil1").Range("B86")
+    wbkOpen.Worksheets("TdB___Conformité").Range("A1:D7").Copy wbkThis.Worksheets("Feuil1").Range("B97")
     
     With wbkThis.Worksheets("Feuil1")
-        .Range("B86").FormulaR1C1 = "Conformité"
+        .Range("B97").FormulaR1C1 = "Conformité"
         
-        With .Range("B86:E86").Interior
+        With .Range("B97:E97").Interior
              .Pattern = xlSolid
              .PatternColorIndex = xlAutomatic
              .ThemeColor = xlThemeColorAccent1
@@ -19,7 +19,7 @@ Sub Conformité()
              .PatternTintAndShade = 0
         End With
 
-        With .Range("B86:E86")
+        With .Range("B97:E97")
              .Borders(xlEdgeTop).LineStyle = xlNone
              .Borders(xlEdgeLeft).LineStyle = xlNone
              .Borders(xlEdgeRight).LineStyle = xlNone
@@ -30,7 +30,7 @@ Sub Conformité()
              .Font.Bold = True
         End With
 
-        With .Range("B86:E86").Borders(xlEdgeBottom)
+        With .Range("B97:E97").Borders(xlEdgeBottom)
              .LineStyle = xlContinuous
              .ThemeColor = 5
              .TintAndShade = 0.399945066682943
