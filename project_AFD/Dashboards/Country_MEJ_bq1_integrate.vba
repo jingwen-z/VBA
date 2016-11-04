@@ -1,5 +1,7 @@
 Sub MEJ_SGBCI()
 
+    Dim wbkThis As Workbook
+    Dim wbkOpen As Workbook
     Dim wbkOpen2 As Workbook
 
     Set wbkThis = ThisWorkbook
