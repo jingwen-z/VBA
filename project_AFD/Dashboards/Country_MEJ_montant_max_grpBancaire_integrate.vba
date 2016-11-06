@@ -1,5 +1,6 @@
 Sub MEJ_montant_max_grpBancaire()
-    
+    Dim wbkThis As Workbook
+    Dim wbkOpen As Workbook
     Dim wbkOpen2 As Workbook
     
     Set wbkThis = ThisWorkbook
