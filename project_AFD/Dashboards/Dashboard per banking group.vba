@@ -3,7 +3,6 @@ Public rw As Long
 Public rowN As Long
 Public cl As Long
 Public colN As Long
-Public n As Long
 
 Sub GrpBq_Octroi_GI_et_GP()
     
